@@ -1,0 +1,13 @@
+{% if all_album %}
+
+  <h3>Here are all my Album:</h3>
+    <ul>
+        {% for album in all_album  %}                                   <!-- connecting database-->
+
+            <li><a href = "{% url 'music:detail' album.id %} ">{{album.album_title}}</a></li>   <!-- Removing Hardcoded URLs,
+                                                                                                when we use one or more app use(music:..)-->
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>You don/t have any album </h3>
+{% endif %}
